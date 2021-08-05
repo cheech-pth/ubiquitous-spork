@@ -1,0 +1,242 @@
+/** Global reset styles **/
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+    
+}
+
+/** CSS Variables **/
+
+:root {
+    --offWhite: #e7e7e7; 
+    --headerGradient: linear-gradient(#e2e2e2, #ffffff);
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    font-weight: 700;
+}
+
+/** Nav bar with flex **/
+
+nav {
+    background: linear-gradient(to right, #23813f, #2e9c6e);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+nav > img {
+    display: flex;
+    padding: 0.5rem 0 0.5rem 0.5rem;
+}
+
+ul {
+    height: 10vh;
+    margin: 0% 5% 0% 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+ul li:not(:last-child) {
+    margin-right: 30px;
+}
+
+/** About section with cards and low contrast bg img **/
+
+article {
+    background: url(imgs/header-bg.png) no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 50px 25px 50px 25px;
+    height: 100vh;
+}
+
+article > div {
+    background-color: blue;
+    width: 100%;
+    border-radius: 5px;
+    text-align: center;
+    padding: 15px;
+}
+
+article > div > h2 {
+    padding-bottom: 0.5em;
+}
+
+/** Header with svg on top of background gradient **/
+
+header {
+    height: 100vh;
+    background-image: url(imgs/aussie-kids-vector.svg), var(--headerGradient);
+    background-repeat: no-repeat;
+    background-position: 10% 80%;
+    background-size: contain;
+    background-blend-mode: soft-light;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header > h1 {
+    display: flex;
+    text-align: center;
+    font-size: 4rem;
+    color: black;
+    padding-bottom: 1em;
+}
+
+/** Button to fill white space **/
+
+p > button {
+    height: 45px;
+    width: 120px;
+    border-radius: 5px;
+    border: 2px solid currentColor;
+    background-color: none;
+    padding: 0.3em 0.8em;
+    text-align: center;
+    font-family: inherit;
+}
+
+button:hover {
+    background-color: green;
+    color: white;
+    transition: 500ms ease-in-out;
+}
+
+/** Quote section with svg **/
+
+section {
+    background-image: url(imgs/logo-normal-ai.svg), linear-gradient(to right, #23813f, #2e9c6e);
+    background-repeat: no-repeat;
+    background-position: 50% 80%;
+    background-size: auto;
+    height: 100vh;
+}
+
+blockquote {
+    padding: 10%;
+}
+
+blockquote > h1 {
+    font-size: 4rem;
+}
+
+blockquote > h3 {
+    font-size: 2rem;
+}
+
+blockquote > p {
+    font-size: 1rem;
+}
+
+blockquote > span {
+    display: inline-block;
+    height: 2px;
+    width: 190px;
+    background-color: var(--offWhite);
+    margin-bottom: 10%;
+    margin-top: 2%;
+}
+
+/** Main section, instead of photoshopping a gradient I used CSS to darken the area of the content **/
+
+main {
+    background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%), url(imgs/banner.png) no-repeat;
+    background-size: cover;
+    color: white;
+    height: 100vh;
+    padding: 10%;
+}
+
+main > h1 {
+    font-size: 2rem;
+}
+
+main > span {
+    display: inline-block;
+    height: 2px;
+    width: 155px;
+    background-color: white;
+    margin-bottom: 10%;
+    margin-top: 2%;
+}
+
+/** Repeat background with svg on top **/
+
+summary {
+    height: 100vh;
+    background-color: #e5e5f7;
+    background-image: url(imgs/aussie-kids-vector.svg), repeating-linear-gradient( 45deg, #4584f7, #4584f7 5px, #e5e5f7 5px, #e5e5f7 25px );
+    background-position: 100% 80%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-blend-mode: overlay;
+    color: black;
+    padding: 10%;
+}
+
+summary > h1 {
+    font-size: 2rem;
+}
+
+summary > span {
+    display: inline-block;
+    height: 2px;
+    width: 155px;
+    background-color: black;
+    margin-bottom: 10%;
+    margin-top: 2%;
+}
+
+/** Footer **/
+
+footer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--headerGradient);
+    color: black;
+    height: 10rem;
+}
+
+footer > p {
+    padding: 10px;
+    max-width: 250px;
+}
+
+footer > img {
+    max-width: 85px;
+    padding: 10px;
+    padding-right: 0px;
+}
+
+
+
