@@ -33,7 +33,7 @@ a:hover {
     font-weight: 700;
 }
 
-/** Nav bar with flex **/
+/** Nav bar with flex for responsive design**/
 
 nav {
     background: linear-gradient(to right, #23813f, #2e9c6e);
@@ -63,71 +63,84 @@ ul li:not(:last-child) {
     margin-right: 30px;
 }
 
-/** About section with cards and low contrast bg img **/
-
-article {
-    background: url(imgs/header-bg.png) no-repeat center center fixed;
-    background-size: cover;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    flex-direction: column;
-    padding: 50px 25px 50px 25px;
-    height: 100vh;
-}
-
-article > div {
-    background-color: blue;
-    width: 100%;
-    border-radius: 5px;
-    text-align: center;
-    padding: 15px;
-}
-
-article > div > h2 {
-    padding-bottom: 0.5em;
-}
-
 /** Header with svg on top of background gradient **/
 
 header {
     height: 100vh;
     background-image: url(imgs/aussie-kids-vector.svg), var(--headerGradient);
     background-repeat: no-repeat;
-    background-position: 10% 80%;
+    background-position: 0% 80%;
     background-size: contain;
     background-blend-mode: soft-light;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
 }
 
 header > h1 {
-    display: flex;
-    text-align: center;
     font-size: 4rem;
     color: black;
+    padding-top: 4em;
     padding-bottom: 1em;
 }
 
-/** Button to fill white space **/
+header > div {
+    display: inline-block;
+}
+
+/** Button  **/
 
 p > button {
-    height: 45px;
-    width: 120px;
+    display: inline-block;
     border-radius: 5px;
     border: 2px solid currentColor;
-    background-color: none;
+    background: none;
     padding: 0.3em 0.8em;
+    font-size: 1rem;
+    font-weight: 700;
     text-align: center;
     font-family: inherit;
+    margin-bottom: 2rem;
 }
 
 button:hover {
     background-color: green;
     color: white;
     transition: 500ms ease-in-out;
+}
+
+/** About section with cards and low contrast bg img, 
+    changes: display: inline-block to show new learning concepts **/
+
+article {
+    background: url(imgs/logo-normal-ai.svg), url(imgs/header-bg.png) no-repeat center center fixed;
+    background-size: auto, cover;
+    background-repeat: no-repeat;
+    background-position: 50% 90%;
+    height: 100vh;
+    text-align: center;
+    line-height: 1.7rem;
+}
+
+article > div {
+    background: linear-gradient(to right, #23813f, #2e9c6e);
+    width: 80%;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-top: 5rem;
+}
+
+/** Responsive design for mobile **/
+
+@media screen and (max-width: 800px) {
+    article > div {
+        background: linear-gradient(to left, #23813f, #2e9c6e);
+        margin-top: 1.5rem;
+        line-height: 1.5rem;
+    }
+}
+
+article > div > h2 {
+    padding-bottom: 0.5em;
 }
 
 /** Quote section with svg **/
@@ -138,6 +151,7 @@ section {
     background-position: 50% 80%;
     background-size: auto;
     height: 100vh;
+    line-height: 1.6rem;
 }
 
 blockquote {
@@ -190,7 +204,7 @@ main > span {
 
 /** Repeat background with svg on top **/
 
-summary {
+div > section {
     height: 100vh;
     background-color: #e5e5f7;
     background-image: url(imgs/aussie-kids-vector.svg), repeating-linear-gradient( 45deg, #4584f7, #4584f7 5px, #e5e5f7 5px, #e5e5f7 25px );
@@ -200,13 +214,16 @@ summary {
     background-blend-mode: overlay;
     color: black;
     padding: 10%;
+    text-align: left;
 }
 
-summary > h1 {
+/** W3 HTML Checker didn't like my structure so I revamped everything here **/
+
+div > h2 {
     font-size: 2rem;
 }
 
-summary > span {
+div > section > span {
     display: inline-block;
     height: 2px;
     width: 155px;
@@ -215,27 +232,36 @@ summary > span {
     margin-top: 2%;
 }
 
-/** Footer **/
+/** Footer with CSS Grid for another layout concept**/
 
 footer {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
     background-color: var(--headerGradient);
+    background-image: url(imgs/avatar-tile.png);
+    background-repeat: repeat;
     color: black;
     height: 10rem;
-}
-
-footer > p {
-    padding: 10px;
-    max-width: 250px;
+    display: grid;
+    grid-template-columns: 50px 1fr 1fr;
+    justify-content: center;
+    row-gap: 20px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 footer > img {
-    max-width: 85px;
-    padding: 10px;
-    padding-right: 0px;
+    justify-self: end;
+    grid-column: 1/2;
+    margin-right: 10px;
+}
+
+footer > p {
+    justify-self: start;
+}
+
+footer > span {
+    text-align: center;
+    grid-column: 3/4;
+    grid-row: 2/4;
 }
 
 
